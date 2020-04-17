@@ -183,6 +183,22 @@ def getPossibilities_multi(offset,length,wordlength,encrypt_int,repertoire):
         new_data.append(experiment_data)
     return new_data
 
+def getPossibilities_specifiedRepertoire(offset,length,wordlength,encrypt_int,repertoire):
+    aggreg_data = reshapeRect(encrypt_int,wordlength)
+    new_data = []
+    for i in range(offset,length+offset):
+        experiment_data = [] 
+        for k in range(len(repertoire[i])):
+            integer = repertoire[i][k]
+            aux_data = aggreg_data.copy()[:,i]
+            print(len(aux_data))
+            for j in range(len(aux_data)):
+                aux_data[j] -= integer
+            experiment_data.append(aux_data)
+            #np.reshape(experiment_data,(-1,length))
+        new_data.append(experiment_data)
+    return new_data
+
 def getPermutationTree(new_data):
     levels_a = [ HungDaddy(i) for i in new_data[0]]
     middle_levels = [levels_a]
@@ -277,6 +293,19 @@ class TreeGraph:
         for i in self.levels[len(self.levels)-1]: 
             lastlevels.append(i.getParents())
         return lastlevels
+    def getLastLevelBranches_constrained(self,start,stop):
+        lastlevels = []
+        for i in self.levels[len(self.levels)-1]:
+            query =i.getParents()
+            prob = getProbability(zipChildren_transVerse(query))
+            if prob > start and prob < stop:
+                lastlevels.append(query)
+        return lastlevels
+def zipChildren_transVerse(arr): 
+    newarr =[]
+    for i in range(len(arr[0])*len(arr)):
+                newarr.append(arr[i%len(arr)][int(i/len(arr))])
+    return newarr
 
 def getRange(arr):              
   tuples = []
@@ -289,6 +318,9 @@ def getRange(arr):
 
 def getAvgProbability(rect):                                    
      p = [ getProbability(rect[:,i]) for i in range(len(rect[0]))] 
+     return np.mean(p)
+def getAvgProbability_transVerse(rect):                                    
+     p = [ getProbability(rect[i]) for i in range(len(rect))] 
      return np.mean(p)
 
 def getAvgProbability_closest(rect):
