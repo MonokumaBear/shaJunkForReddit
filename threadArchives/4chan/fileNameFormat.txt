@@ -1,0 +1,9 @@
+HTML File: <board>_<thread id>_<iso 8601 datetime format, except ":" is replaced with "-">.html
+Folder of linked files: <board>_<thread id>_<iso 8601 datetime format, except ":" is replaced with "-">_files
+
+Instructions on how to create these files via Chrome:
+1. Open the webpage
+2. Right click > Save As...
+3. Format: Webpage, Complete
+4. Set name in proper format
+5. Save
