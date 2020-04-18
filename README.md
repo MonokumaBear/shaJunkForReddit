@@ -16,6 +16,7 @@ Collaborative effort to solve the 46ty encryption puzzle; this repository is mea
 | 0 | Nihilist cipher that uses the Polybius square in Figure 1 with a key of "CRYPTII" |
 ### Figure 1; Polybius square used in the Nihilist cipher
 |     |**1**|**2**|**3**|**4**|**5**|
+|:---:|:---:|:---:|:---:|:---:|:---:|
 |**1**|  A  |  B  |  C  |  D  |  E  |
 |**2**|  F  |  G  |  H  | I/J |  K  |
 |**3**|  L  |  M  |  N  |  O  |  P  |
