@@ -1,0 +1,3 @@
+ using the alphabet: abcdefgh[ij]klmnopqrstuvwxyz
+ cryptii 
+ 13 42 54 35 44  24  24
