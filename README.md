@@ -11,3 +11,5 @@ Collaborative effort to solve the 46ty encryption puzzle; this repository is mea
 | code     | SpatchCock's code for solving 46ty's puzzle. |
 ## Where to have discussions
 I'm currently trying to figure out how to set up a forum of sorts on here. Currently I have a GitHub organization set up ([46ty-Collaborative-Effort](https://github.com/46ty-Collaborative-Effort)), which is able to host Discussions, though I can't seem to figure out how to give the entire organization access to this repository ([MonokumaBear/46ty](https://github.com/MonokumaBear/46ty)).
+
+![Monokuma powering up]()
